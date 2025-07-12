@@ -1,20 +1,16 @@
 name: deploy-scripts gh-pages
 
-on:
-  push:
-    branches:
-      - master
-
+on: push
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: puzl-ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
           persist-credentials: false
-          
+
       - name: install node-v16
         uses: actions/setup-node@v3
         with:
